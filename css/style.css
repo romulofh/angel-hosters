@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
 :root {
   --primary-color: #612674;
 }
 
 html {
   font-family: sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Oxygen', sans-serif;
 }
 
 .cabecalho {
@@ -34,6 +40,44 @@ html {
   background-color: color-mix(in srgb, var(--primary-color), white 10%)
 }
 
+.heroBanner {
+  text-align: center;
+  background-color: #f6f6f6;
+  padding: 1em;
+  margin: .5em 0;
+}
+
+.heroBanner_iconPlay {
+  height: 5em;
+  width: 5em;
+  display: none;
+}
+
+.heroBanner_iconPlay img {
+  width: 100%;
+}
+
+.heroBanner_title {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  margin: 1em 0;
+}
+
+.heroBanner_subtitle {
+  font-size: 1em;
+  color: color-mix(in srgb, var(--primary-color), white);
+  line-height: 1.5em;
+}
+
+.heroBanner_btn {
+  display: inline-block;
+  padding: .9em 2em;
+  background-color: #58c4c4;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 48.75em) {
   .cabecalho {
     flex-direction: row;
@@ -62,5 +106,59 @@ html {
 
   .cabecalho_nav_link:hover {
     background-color: initial;
+  }
+
+  .heroBanner {
+    background-color: var(--primary-color);
+  }
+
+  .heroBanner_title, .heroBanner_subtitle {
+    color: white;
+  }
+
+  .heroBanner_iconPlay {
+    display: block;
+    margin: auto;
+  }
+
+}
+
+@media screen and (min-width: 60em){
+  .heroBanner {
+    background-image: url(../images/bg_topo_1198x670.jpg);
+    aspect-ratio: 1198 / 670;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .heroBanner .maxWidth {
+    margin: initial;
+    margin-bottom: 3em;
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .heroBanner {
+    background-image: linear-gradient(transparent, var(--primary-color)), url(../images/bg_topo_1600x1374.jpg);
+    background-position: center top;
+    background-color: var(--primary-color);
+    background-repeat: no-repeat;
+    max-height: 80vh;
+    width: 100%;
+  }
+
+  .heroBanner .maxWidth {
+    width: 50%;
+  }
+
+  .heroBanner_iconPlay {
+    width: 7em;
+    height: 7em;
+  }
+
+  .heroBanner_title, .heroBanner_subtitle {
+    text-shadow: 2px 2px 2px rgb(0 0 0 / .5);
   }
 }
